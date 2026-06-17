@@ -1,16 +1,24 @@
-﻿# website-upload-20260525-183452-028
+# 电视剧热播榜单-热门剧集片库-全集高清在线播放
 
-Batch 28 of 10. Contains extracted static website versions. The original zip files are not committed.
+本静态网站由上传素材生成，包含：
 
-| Directory | Source zip |
-| --- | --- |
-| version-271 | project-bolt-sb1-d41z9hax-chatgpt (1).zip |
-| version-272 | project-bolt-sb1-d8lmwtcv-chatgpt (1).zip |
-| version-273 | project-bolt-sb1-dcfsacmq-chatgpt (1).zip |
-| version-274 | project-bolt-sb1-dch3tfcg - 副本-chatgpt (1).zip |
-| version-275 | project-bolt-sb1-dcndz2c6 - 副本-chatgpt (1).zip |
-| version-276 | project-bolt-sb1-de3o2bzh-chatgpt (1).zip |
-| version-277 | project-bolt-sb1-dh1qbu9b - 副本-chatgpt (1).zip |
-| version-278 | project-bolt-sb1-dh1qbu9b-chatgpt (1).zip |
-| version-279 | project-bolt-sb1-dhvvb3on - 副本-chatgpt (1).zip |
-| version-280 | project-bolt-sb1-dhvvb3on-chatgpt (1).zip |
+- 首页：index.html
+- 分类总览页：categories.html
+- 独立分类页：10 个
+- 热播榜页：ranking.html
+- 搜索筛选页：search.html
+- 影片详情页：2000 个
+- HTML 站点地图：sitemap.html
+- XML Sitemap：sitemap.xml
+- 影片数据：data/movies.json
+- 本地 HLS 试看源：media/preview.m3u8
+
+建议使用本地服务器访问，例如：
+
+```bash
+python3 -m http.server 8080
+```
+
+然后在浏览器打开 `http://localhost:8080/`。
+
+说明：上传的影片 TXT 未包含真实 m3u8 地址，因此详情页播放器统一绑定到本地 HLS 试看源，用于保证播放按钮、HLS 初始化与 video 播放流程可用。后续替换真实播放源时，可把详情页中的 `data-source="../media/preview.m3u8"` 改为对应影片 m3u8 地址。
